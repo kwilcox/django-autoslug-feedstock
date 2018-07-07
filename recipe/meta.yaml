@@ -1,35 +1,36 @@
+{% set version = "1.9.3" %}
+
 package:
     name: django-autoslug
-    version: 1.9.3
+    version: {{ version }}
 
 source:
-    fn: django-autoslug-1.9.3.tar.gz
-    url: https://pypi.python.org/packages/source/d/django-autoslug/django-autoslug-1.9.3.tar.gz
-    md5: d91e4f04869a282398ca6efc623f2b34
+  url: https://pypi.io/packages/source/d/django-autoslug/django-autoslug-1.9.3.tar.gz
+  md5: 790efc84246ad8b7106d94e79bff8eb14b94616e8765235784483832899bb40a
 
 build:
-    noarch: python
-    number: 1
-    script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - django
+  build:
+    - python
+    - pip
+  run:
+    - python
+    - django
 
 test:
-    commands:
-        - python -c "import django; from django.conf import settings; settings.configure(); django.setup(); import autoslug"
+  commands:
+    - python -c "import django; from django.conf import settings; settings.configure(); django.setup(); import autoslug"
 
 about:
-    home: http://bitbucket.org/neithere/django-autoslug/
-    license: LGPL-3.0
-    summary: An automated slug field for Django
+  home: http://bitbucket.org/neithere/django-autoslug/
+  license: LGPL-3.0
+  summary: An automated slug field for Django
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
-        - kwilcox
+  recipe-maintainers:
+    - ocefpaf
+    - kwilcox
