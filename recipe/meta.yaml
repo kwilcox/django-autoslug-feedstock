@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/django-autoslug/django-autoslug-1.9.3.tar.gz
-  md5: 790efc84246ad8b7106d94e79bff8eb14b94616e8765235784483832899bb40a
+  sha256: 790efc84246ad8b7106d94e79bff8eb14b94616e8765235784483832899bb40a
 
 build:
   number: 1
