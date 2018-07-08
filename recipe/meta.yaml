@@ -19,7 +19,7 @@ requirements:
     - pip
   run:
     - python
-    - django
+    - django >=1.7.10,<2
 
 test:
   commands:
